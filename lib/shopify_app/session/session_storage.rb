@@ -18,7 +18,7 @@ module ShopifyApp
         return unless id
 
         if shop = self.find_by(id: id)
-          ShopifyAPI::Session.new(shop.shopify_domain, shop.shopify_token)
+          ShopifyAPI::Session.new(domain: shop.shopify_domain, token: shop.shopify_token, api_version:'2020-01')
         end
       end
     end
